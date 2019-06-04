@@ -8,9 +8,8 @@ UnitTest:
   before_script:
     - pip3 install -r requirements.txt
     - python3 manage.py makemigrations
-    - python3 manage.py migrate
   script:
-    - python3 manage.py runserver 8000
+    - python3 manage.py migrate
 publish:
   type: deploy
   script:
