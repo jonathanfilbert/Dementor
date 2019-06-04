@@ -5,12 +5,15 @@ import datetime
 # Create your models here.
 CATEGORY_CHOICES = [("Design", "Design"), ("Development", "Development"), ("Social",
                                                                            "Social"), ("Leadership", "Leadership")]
+
+
 class PortofolioData(models.Model):
     title = models.CharField(max_length=100)
     category = models.CharField(max_length=100, choices=CATEGORY_CHOICES)
     short_description = models.CharField(max_length=50)
     description = models.TextField()
-    image = models.FileField()
+    image = models.TextField(max_length=1000)
+
 
 class WhatAmIDoing(models.Model):
     time = models.DateField(default=datetime.date.today)
