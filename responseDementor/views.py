@@ -5,6 +5,10 @@ from rest_framework.views import APIView
 from rest_framework import status
 from rest_framework.response import Response
 
+def init(request):
+    if request.method == "GET":
+        return HttpResponse("Hello!")
+
 class PortoDetails(APIView):
     def get(self,request):
         portos = PortofolioData.objects.all()
